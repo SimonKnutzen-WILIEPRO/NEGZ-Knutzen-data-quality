@@ -1,0 +1,7 @@
+name: negz_fruehjahrstagung
+channels:
+  - defaults
+dependencies:
+  - python=3.11
+  - scikit-learn
+  - matplotlib
