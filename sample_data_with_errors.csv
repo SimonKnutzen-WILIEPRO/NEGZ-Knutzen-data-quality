@@ -24,7 +24,7 @@ id;name;email;date_of_birth;salary;department;is_active;phone;city;registration_
 22;Marie Schwarz;marie.schwarz@example.com;1999-01-01;43000.00;IT;true;+49 171 6668908;Lübeck;2024-10-14;67.4;extra_field
 23;Robert Frank;robert.frank@example.com;1984-07-13;57000.00;HR;true;+49 172 5557807;Mainz;2024-11-22
 24;Sabine Lang;sabine.lang@example.com;NULL;50000.00;Finance;true;+49 173 4446706;Kiel;2024-12-30;90.1
-25;Tim Schulze;tim schulze@@example.com;1991-10-06;55000.00;IT;true;+49 174 3335605;Rostock;2025-01-17;83.9
+25;Schulze; Tim;tim schulze@@example.com;1991-10-06;55000.00;IT;true;+49 174 3335605;Rostock;2025-01-17;83.9
 26;Andrea Berger;andrea.berger@example.com;1977-03-18;63000.00;Marketing Department;true;+49 175 2224504;Potsdam;2025-02-28;75.6
 27;Florian Kern;florian.kern@example.com;1988-08-24;0.00;Sales;true;12345;Trier;2025-03-15;88.8
 28;Monika Huber;monika.huber@example.com;1965-12-09;71000.00;HR;true;+49 177 0002302;Regensburg;2025-04-22;PASS

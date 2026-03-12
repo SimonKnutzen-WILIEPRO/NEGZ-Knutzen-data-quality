@@ -40,5 +40,6 @@
 | 36 | 27 | `phone` | **Invalid phone format** | `12345` — too short, no country code |
 | 37 | 15 | `phone` | **Inconsistent phone format** | `0174-333-0665` — uses dashes, no `+49` prefix |
 | 38 | 22 & 16 | `id` | **Duplicate primary key** | id = 14 which is already used before |
+| 39 | 27 | `name` | **Separator inside field** | Name `Schulze; Tim` contains a semicolon and this time the csv contains all other columns |
 
-**Total: 38 intentional data quality issues** across missing values, type mismatches, format inconsistencies, NULL literals, separator conflicts, duplicates, structural errors, outliers, duplicate primary keys and invalid entries.
+**Total: 39 intentional data quality issues** across missing values, type mismatches, format inconsistencies, NULL literals, separator conflicts, duplicates, structural errors, outliers, duplicate primary keys and invalid entries.
