@@ -1,0 +1,41 @@
+# Sample Data with Highlighted Errors
+
+Error cells are marked in **bold** with the error number from `data_errors_overview.md` in superscript.
+
+| id | name | email | date_of_birth | salary | department | is_active | phone | city | registration_date | score | Notes |
+|----|------|-------|---------------|--------|------------|-----------|-------|------|-------------------|-------|-------|
+| 1 | Max Mustermann | max.mustermann@example.com | 1990-05-12 | 55000.00 | Finance | true | +49 170 1234567 | Berlin | 2023-01-15 | 87.5 | |
+| 2 | Anna Schmidt | anna.schmidt@example.com | **15.03.1985** <sup>#6</sup> | 62000.00 | HR | true | +49 171 9876543 | München | 2023-02-20 | 92.0 | |
+| 3 | Peter Müller | **(empty)** <sup>#1</sup> | 1978-11-23 | 48000.00 | IT | true | +49 172 5551234 | Hamburg | 2023-03-01 | 76.3 | |
+| 4 | Julia Weber | julia.weber@example.com | 1995-08-30 | **NULL** <sup>#4</sup> | Marketing | true | +49 173 4449876 | Frankfurt | 2023-04-10 | 88.1 | |
+| 5 | Thomas Fischer | **thomas.fischer** <sup>#17</sup> | **2000-02-29** <sup>#11</sup> | 51000.00 | Finance | **yes** <sup>#26</sup> | +49 174 3338765 | Köln | 2023-05-22 | 65.0 | |
+| 6 | Sarah Becker | sarah.becker@example.com | **1988-13-05** <sup>#10</sup> | 59000.00 | HR | true | +49 175 2227654 | Stuttgart | **15-06-2023** <sup>#8</sup> | 91.4 | |
+| 7 | **Müller; Hans** <sup>#13</sup> | hans.mueller@example.com | 1992-07-19 | 45000.00 | IT | true | +49 176 1116543 | Düsseldorf | 2023-07-30 | **(empty)** <sup>#2</sup> | ⚠️ Unquoted `;` in name shifts all columns when parsed |
+| 8 | Lisa Klein | lisa.klein@example.com | 1983-04-17 | **-32000.00** <sup>#19</sup> | Marketing | false | +49 177 0005432 | Leipzig | 2023-08-14 | 82.7 | |
+| 9 | Jürgen Braun | juergen.braun@example.com | 1975-09-08 | 72000.00 | Finance | true | **(empty)** <sup>#3</sup> | Nürnberg | 2023-09-05 | 95.2 | |
+| 10 | Claudia Hoffmann | claudia.hoffmann@example.com | 1991-01-25 | **54000,50** <sup>#23</sup> | IT | **TRUE** <sup>#27</sup> | +49 179 8883210 | Dresden | 2023-10-19 | 78.9 | |
+| **11** <sup>#16</sup> | **Marco Richter** | **marco.richter@example.com** | **1987-06-14** | **58000.00** | **Sales** | **true** | **+49 170 7772109** | **Hannover** | **2023-11-02** | **84.6** | ⚠️ Duplicate row (1 of 2) |
+| **11** <sup>#16</sup> | **Marco Richter** | **marco.richter@example.com** | **1987-06-14** | **58000.00** | **Sales** | **true** | **+49 170 7772109** | **Hannover** | **2023-11-02** | **84.6** | ⚠️ Duplicate row (2 of 2) |
+| 12 | Nina Wolf | nina.wolf@example.com | 1993-03-22 | 46000.00 | HR | **0** <sup>#28</sup> | +49 171 6660998 | Bremen | 2023-12-11 | **-5.0** <sup>#31</sup> | |
+| 13 | Oliver Schäfer | oliver.schaefer@example.com | 1980-10-31 | **999999.99** <sup>#20</sup> | IT | true | +49 172 5550887 | Essen | 2024-01-08 | **101.3** <sup>#30</sup> | |
+| 14 | Emma Wagner | emma.wagner@example.com | 1996-12-03 | 52000.00 | Finance | true | +49 173 4440776 | Dortmund | 2024-02-14 | 70.8 | ⚠️ id=14 used again below <sup>#38</sup> |
+| 15 | Felix Zimmermann | felix.zimmermann@example.com | **01/07/1989** <sup>#7</sup> | 53000.00 | Marketing | true | **0174-333-0665** <sup>#37</sup> | Bonn | 2024-03-20 | 89.1 | |
+| 16 | Sophie Krüger | sophie.krueger@example.com | 1994-09-18 | **47000 EUR** <sup>#22</sup> | Sales | true | +49 175 2220554 | Mannheim | 2024-04-05 | 77.4 | |
+| 17 | David Hartmann | david.hartmann@example.com | 1982-02-28 | 61000.00 | IT | true | +49 176 1110443 | Karlsruhe | 2024-05-18 | **N/A** <sup>#32</sup> | |
+| 18 | Lena Schmitt | lena.schmitt@example.com | 1997-04-09 | 49000.00 | HR | **maybe** <sup>#29</sup> | +49 177 0000332 | Augsburg | 2024-06-25 | 86.0 | |
+| 19 | Jan Krause | jan.krause@example.com | 1970-08-21 | 68000.00 | Finance | true | +49 178 9990221 | Wiesbaden | **24-07-30** <sup>#9</sup> | 93.7 | |
+| **14** <sup>#38</sup> | Katrin Engel | katrin.engel@example.com | 1986-11-15 | 56000.00 | Marketing | true | +49 179 8880110 | Aachen | 2024-08-12 | 80.2 | ⚠️ Duplicate primary key (id=14) |
+| 21 | Paul Neumann | paul.neumann@example.com | 1973-05-27 | **  65000.00** <sup>#25</sup> | Sales | true | +49 170 7779009 | Freiburg | 2024-09-01 | **NaN** <sup>#33</sup> | |
+| 22 | Marie Schwarz | marie.schwarz@example.com | 1999-01-01 | 43000.00 | IT | true | +49 171 6668908 | Lübeck | 2024-10-14 | 67.4 | ⚠️ Extra field at end <sup>#14</sup> |
+| 23 | Robert Frank | robert.frank@example.com | 1984-07-13 | 57000.00 | HR | true | +49 172 5557807 | Mainz | 2024-11-22 | **(missing)** <sup>#15</sup> | ⚠️ Row has only 10 fields |
+| 24 | Sabine Lang | sabine.lang@example.com | **NULL** <sup>#5</sup> | 50000.00 | Finance | true | +49 173 4446706 | Kiel | 2024-12-30 | 90.1 | |
+| 25 | **"Schulze; Tim"** <sup>#39</sup> | **tim schulze@@example.com** <sup>#18</sup> | 1991-10-06 | 55000.00 | IT | true | +49 174 3335605 | Rostock | 2025-01-17 | 83.9 | ⚠️ Quoted `;` in name — parsed correctly but unusual |
+| 26 | Andrea Berger | andrea.berger@example.com | 1977-03-18 | 63000.00 | **Marketing Department** <sup>#35</sup> | true | +49 175 2224504 | Potsdam | 2025-02-28 | 75.6 | |
+| 27 | Florian Kern | florian.kern@example.com | 1988-08-24 | **0.00** <sup>#21</sup> | Sales | true | **12345** <sup>#36</sup> | Trier | 2025-03-15 | 88.8 | |
+| 28 | Monika Huber | monika.huber@example.com | 1965-12-09 | 71000.00 | HR | true | +49 177 0002302 | Regensburg | 2025-04-22 | **PASS** <sup>#34</sup> | |
+| 29 | Stefan Vogel | stefan.vogel@example.com | 1995-06-30 | **48,500.00** <sup>#24</sup> | IT | true | +49 178 9991201 | Chemnitz | 2025-05-09 | 72.1 | |
+| 30 | Heike Bauer | heike.bauer@example.com | **2099-04-15** <sup>#12</sup> | 52000.00 | Finance | true | +49 179 8880100 | Ulm | 2025-06-03 | 81.5 | |
+
+---
+
+**Legend:** **Bold** = error cell · <sup>#N</sup> = error number from `data_errors_overview.md` · ⚠️ = structural issue affecting entire row
