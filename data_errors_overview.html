@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Data Errors Overview</title>
+  <style>
+:root{--bg:#ffffff;--fg:#111827;--muted:#6b7280;--border:#e5e7eb;--codebg:#f3f4f6;--accent:#2563eb;}
+@media (prefers-color-scheme: dark){:root{--bg:#0b1020;--fg:#e5e7eb;--muted:#9ca3af;--border:#1f2937;--codebg:#111827;--accent:#60a5fa;}}
+body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;margin:32px;line-height:1.45;background:var(--bg);color:var(--fg);}
+a{color:var(--accent);} h1,h2,h3{line-height:1.2;margin-top:1.2em;}
+hr{border:none;border-top:1px solid var(--border);margin:24px 0;}
+code,pre{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;}
+pre{background:var(--codebg);padding:12px 14px;border-radius:10px;overflow:auto;border:1px solid var(--border);} 
+code{background:var(--codebg);padding:2px 6px;border-radius:6px;}
+table{border-collapse:collapse;width:100%;margin:14px 0;}
+th,td{border:1px solid var(--border);padding:8px 10px;vertical-align:top;}
+th{background:rgba(37,99,235,0.08);text-align:left;}
+blockquote{border-left:4px solid var(--border);padding-left:12px;color:var(--muted);} 
+.small{color:var(--muted);font-size:0.9rem;}
+</style>
+</head>
+<body>
+  <div class="small">Generated from Markdown</div>
+  <h1 id="intentional-data-quality-issues-in-sample_data_with_errorscsv">Intentional Data Quality Issues in <code>sample_data_with_errors.csv</code></h1>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Row(s)</th>
+<th>Column</th>
+<th>Error Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>3</td>
+<td><code>email</code></td>
+<td><strong>Missing value</strong></td>
+<td>Email is empty</td>
+</tr>
+<tr>
+<td>2</td>
+<td>7</td>
+<td><code>score</code></td>
+<td><strong>Missing value</strong></td>
+<td>Score is empty</td>
+</tr>
+<tr>
+<td>3</td>
+<td>9</td>
+<td><code>phone</code></td>
+<td><strong>Missing value</strong></td>
+<td>Phone number is empty</td>
+</tr>
+<tr>
+<td>4</td>
+<td>4</td>
+<td><code>salary</code></td>
+<td><strong>NULL string</strong></td>
+<td>Salary contains literal text <code>NULL</code> instead of a numeric value</td>
+</tr>
+<tr>
+<td>5</td>
+<td>24</td>
+<td><code>date_of_birth</code></td>
+<td><strong>NULL string</strong></td>
+<td>Date of birth contains literal <code>NULL</code></td>
+</tr>
+<tr>
+<td>6</td>
+<td>2</td>
+<td><code>date_of_birth</code></td>
+<td><strong>Inconsistent date format</strong></td>
+<td>Uses <code>DD.MM.YYYY</code> instead of <code>YYYY-MM-DD</code></td>
+</tr>
+<tr>
+<td>7</td>
+<td>15</td>
+<td><code>date_of_birth</code></td>
+<td><strong>Inconsistent date format</strong></td>
+<td>Uses <code>MM/DD/YYYY</code></td>
+</tr>
+<tr>
+<td>8</td>
+<td>6</td>
+<td><code>registration_date</code></td>
+<td><strong>Inconsistent date format</strong></td>
+<td>Uses <code>DD-MM-YYYY</code> instead of <code>YYYY-MM-DD</code></td>
+</tr>
+<tr>
+<td>9</td>
+<td>19</td>
+<td><code>registration_date</code></td>
+<td><strong>Ambiguous date format</strong></td>
+<td>Uses <code>YY-MM-DD</code> (2-digit year)</td>
+</tr>
+<tr>
+<td>10</td>
+<td>6</td>
+<td><code>date_of_birth</code></td>
+<td><strong>Invalid date</strong></td>
+<td>Month 13 does not exist (<code>1988-13-05</code>)</td>
+</tr>
+<tr>
+<td>11</td>
+<td>5</td>
+<td><code>date_of_birth</code></td>
+<td><strong>Invalid date</strong></td>
+<td>2000-02-29 — 2000 is a leap year so technically valid, but worth flagging for review</td>
+</tr>
+<tr>
+<td>12</td>
+<td>30</td>
+<td><code>date_of_birth</code></td>
+<td><strong>Unrealistic date</strong></td>
+<td>Birth year <code>2099</code> is in the future</td>
+</tr>
+<tr>
+<td>13</td>
+<td>7</td>
+<td><code>name</code></td>
+<td><strong>Separator inside field</strong></td>
+<td>Name <code>Müller; Hans</code> contains a semicolon, shifting all subsequent columns → row has 12 apparent columns</td>
+</tr>
+<tr>
+<td>14</td>
+<td>22</td>
+<td>(end)</td>
+<td><strong>Extra column</strong></td>
+<td>Row has an extra <code>extra_field</code> value at the end (12 fields instead of 11)</td>
+</tr>
+<tr>
+<td>15</td>
+<td>23</td>
+<td><code>score</code></td>
+<td><strong>Missing column</strong></td>
+<td>Row has only 10 fields — <code>score</code> column is absent</td>
+</tr>
+<tr>
+<td>16</td>
+<td>11–12</td>
+<td>all</td>
+<td><strong>Duplicate row</strong></td>
+<td>Row id 11 (Marco Richter) appears twice identically</td>
+</tr>
+<tr>
+<td>17</td>
+<td>5</td>
+<td><code>email</code></td>
+<td><strong>Invalid email</strong></td>
+<td><code>thomas.fischer</code> — missing <code>@domain</code></td>
+</tr>
+<tr>
+<td>18</td>
+<td>25</td>
+<td><code>email</code></td>
+<td><strong>Invalid email</strong></td>
+<td><code>tim schulze@@example.com</code> — double <code>@@</code> and space in local part</td>
+</tr>
+<tr>
+<td>19</td>
+<td>8</td>
+<td><code>salary</code></td>
+<td><strong>Negative value</strong></td>
+<td>Salary is <code>-32000.00</code> (unrealistic)</td>
+</tr>
+<tr>
+<td>20</td>
+<td>13</td>
+<td><code>salary</code></td>
+<td><strong>Outlier value</strong></td>
+<td>Salary <code>999999.99</code> is an extreme outlier</td>
+</tr>
+<tr>
+<td>21</td>
+<td>27</td>
+<td><code>salary</code></td>
+<td><strong>Suspicious zero</strong></td>
+<td>Salary is <code>0.00</code></td>
+</tr>
+<tr>
+<td>22</td>
+<td>16</td>
+<td><code>salary</code></td>
+<td><strong>Unit in numeric field</strong></td>
+<td><code>47000 EUR</code> — contains text in a numeric column</td>
+</tr>
+<tr>
+<td>23</td>
+<td>10</td>
+<td><code>salary</code></td>
+<td><strong>Wrong decimal separator</strong></td>
+<td>Uses comma: <code>54000,50</code> instead of <code>54000.50</code></td>
+</tr>
+<tr>
+<td>24</td>
+<td>29</td>
+<td><code>salary</code></td>
+<td><strong>Wrong thousand/decimal separator</strong></td>
+<td><code>48,500.00</code> — ambiguous comma usage</td>
+</tr>
+<tr>
+<td>25</td>
+<td>21</td>
+<td><code>salary</code></td>
+<td><strong>Leading whitespace</strong></td>
+<td><code>65000.00</code> has leading spaces</td>
+</tr>
+<tr>
+<td>26</td>
+<td>5</td>
+<td><code>is_active</code></td>
+<td><strong>Inconsistent boolean</strong></td>
+<td><code>yes</code> instead of <code>true/false</code></td>
+</tr>
+<tr>
+<td>27</td>
+<td>10</td>
+<td><code>is_active</code></td>
+<td><strong>Inconsistent boolean</strong></td>
+<td><code>TRUE</code> (different casing)</td>
+</tr>
+<tr>
+<td>28</td>
+<td>12</td>
+<td><code>is_active</code></td>
+<td><strong>Inconsistent boolean</strong></td>
+<td><code>0</code> instead of <code>true/false</code></td>
+</tr>
+<tr>
+<td>29</td>
+<td>18</td>
+<td><code>is_active</code></td>
+<td><strong>Invalid boolean</strong></td>
+<td><code>maybe</code> is not a valid boolean</td>
+</tr>
+<tr>
+<td>30</td>
+<td>13</td>
+<td><code>score</code></td>
+<td><strong>Out-of-range value</strong></td>
+<td>Score <code>101.3</code> exceeds plausible 0–100 range</td>
+</tr>
+<tr>
+<td>31</td>
+<td>12</td>
+<td><code>score</code></td>
+<td><strong>Negative score</strong></td>
+<td>Score <code>-5.0</code> is below plausible range</td>
+</tr>
+<tr>
+<td>32</td>
+<td>17</td>
+<td><code>score</code></td>
+<td><strong>Non-numeric value</strong></td>
+<td><code>N/A</code> in a numeric column</td>
+</tr>
+<tr>
+<td>33</td>
+<td>21</td>
+<td><code>score</code></td>
+<td><strong>Non-numeric value</strong></td>
+<td><code>NaN</code> in a numeric column</td>
+</tr>
+<tr>
+<td>34</td>
+<td>28</td>
+<td><code>score</code></td>
+<td><strong>Non-numeric value</strong></td>
+<td><code>PASS</code> (categorical text in numeric column)</td>
+</tr>
+<tr>
+<td>35</td>
+<td>26</td>
+<td><code>department</code></td>
+<td><strong>Inconsistent category</strong></td>
+<td><code>Marketing Department</code> instead of <code>Marketing</code></td>
+</tr>
+<tr>
+<td>36</td>
+<td>27</td>
+<td><code>phone</code></td>
+<td><strong>Invalid phone format</strong></td>
+<td><code>12345</code> — too short, no country code</td>
+</tr>
+<tr>
+<td>37</td>
+<td>15</td>
+<td><code>phone</code></td>
+<td><strong>Inconsistent phone format</strong></td>
+<td><code>0174-333-0665</code> — uses dashes, no <code>+49</code> prefix</td>
+</tr>
+<tr>
+<td>38</td>
+<td>22 &amp; 16</td>
+<td><code>id</code></td>
+<td><strong>Duplicate primary key</strong></td>
+<td>id = 14 which is already used before</td>
+</tr>
+<tr>
+<td>39</td>
+<td>27</td>
+<td><code>name</code></td>
+<td><strong>Separator inside field</strong></td>
+<td>Name <code>Schulze; Tim</code> contains a semicolon and this time the csv contains all other columns</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Total: 39 intentional data quality issues</strong> across missing values, type mismatches, format inconsistencies, NULL literals, separator conflicts, duplicates, structural errors, outliers, duplicate primary keys and invalid entries.</p>
+</body>
+</html>

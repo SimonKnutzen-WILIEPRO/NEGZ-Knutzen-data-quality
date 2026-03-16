@@ -1,0 +1,484 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Sample Data Highlighted</title>
+  <style>
+:root{--bg:#ffffff;--fg:#111827;--muted:#6b7280;--border:#e5e7eb;--codebg:#f3f4f6;--accent:#2563eb;}
+@media (prefers-color-scheme: dark){:root{--bg:#0b1020;--fg:#e5e7eb;--muted:#9ca3af;--border:#1f2937;--codebg:#111827;--accent:#60a5fa;}}
+body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;margin:32px;line-height:1.45;background:var(--bg);color:var(--fg);}
+a{color:var(--accent);} h1,h2,h3{line-height:1.2;margin-top:1.2em;}
+hr{border:none;border-top:1px solid var(--border);margin:24px 0;}
+code,pre{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;}
+pre{background:var(--codebg);padding:12px 14px;border-radius:10px;overflow:auto;border:1px solid var(--border);} 
+code{background:var(--codebg);padding:2px 6px;border-radius:6px;}
+table{border-collapse:collapse;width:100%;margin:14px 0;}
+th,td{border:1px solid var(--border);padding:8px 10px;vertical-align:top;}
+th{background:rgba(37,99,235,0.08);text-align:left;}
+blockquote{border-left:4px solid var(--border);padding-left:12px;color:var(--muted);} 
+.small{color:var(--muted);font-size:0.9rem;}
+</style>
+</head>
+<body>
+  <div class="small">Generated from Markdown</div>
+  <h1 id="sample-data-with-highlighted-errors">Sample Data with Highlighted Errors</h1>
+<p>Error cells are marked in <strong>bold</strong> with the error number from <code>data_errors_overview.md</code> in superscript.</p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>name</th>
+<th>email</th>
+<th>date_of_birth</th>
+<th>salary</th>
+<th>department</th>
+<th>is_active</th>
+<th>phone</th>
+<th>city</th>
+<th>registration_date</th>
+<th>score</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Max Mustermann</td>
+<td>max.mustermann@example.com</td>
+<td>1990-05-12</td>
+<td>55000.00</td>
+<td>Finance</td>
+<td>true</td>
+<td>+49 170 1234567</td>
+<td>Berlin</td>
+<td>2023-01-15</td>
+<td>87.5</td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td>Anna Schmidt</td>
+<td>anna.schmidt@example.com</td>
+<td><strong>15.03.1985</strong> <sup>#6</sup></td>
+<td>62000.00</td>
+<td>HR</td>
+<td>true</td>
+<td>+49 171 9876543</td>
+<td>München</td>
+<td>2023-02-20</td>
+<td>92.0</td>
+<td></td>
+</tr>
+<tr>
+<td>3</td>
+<td>Peter Müller</td>
+<td><strong>(empty)</strong> <sup>#1</sup></td>
+<td>1978-11-23</td>
+<td>48000.00</td>
+<td>IT</td>
+<td>true</td>
+<td>+49 172 5551234</td>
+<td>Hamburg</td>
+<td>2023-03-01</td>
+<td>76.3</td>
+<td></td>
+</tr>
+<tr>
+<td>4</td>
+<td>Julia Weber</td>
+<td>julia.weber@example.com</td>
+<td>1995-08-30</td>
+<td><strong>NULL</strong> <sup>#4</sup></td>
+<td>Marketing</td>
+<td>true</td>
+<td>+49 173 4449876</td>
+<td>Frankfurt</td>
+<td>2023-04-10</td>
+<td>88.1</td>
+<td></td>
+</tr>
+<tr>
+<td>5</td>
+<td>Thomas Fischer</td>
+<td><strong>thomas.fischer</strong> <sup>#17</sup></td>
+<td><strong>2000-02-29</strong> <sup>#11</sup></td>
+<td>51000.00</td>
+<td>Finance</td>
+<td><strong>yes</strong> <sup>#26</sup></td>
+<td>+49 174 3338765</td>
+<td>Köln</td>
+<td>2023-05-22</td>
+<td>65.0</td>
+<td></td>
+</tr>
+<tr>
+<td>6</td>
+<td>Sarah Becker</td>
+<td>sarah.becker@example.com</td>
+<td><strong>1988-13-05</strong> <sup>#10</sup></td>
+<td>59000.00</td>
+<td>HR</td>
+<td>true</td>
+<td>+49 175 2227654</td>
+<td>Stuttgart</td>
+<td><strong>15-06-2023</strong> <sup>#8</sup></td>
+<td>91.4</td>
+<td></td>
+</tr>
+<tr>
+<td>7</td>
+<td><strong>Müller; Hans</strong> <sup>#13</sup></td>
+<td>hans.mueller@example.com</td>
+<td>1992-07-19</td>
+<td>45000.00</td>
+<td>IT</td>
+<td>true</td>
+<td>+49 176 1116543</td>
+<td>Düsseldorf</td>
+<td>2023-07-30</td>
+<td><strong>(empty)</strong> <sup>#2</sup></td>
+<td>⚠️ Unquoted <code>;</code> in name shifts all columns when parsed</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Lisa Klein</td>
+<td>lisa.klein@example.com</td>
+<td>1983-04-17</td>
+<td><strong>-32000.00</strong> <sup>#19</sup></td>
+<td>Marketing</td>
+<td>false</td>
+<td>+49 177 0005432</td>
+<td>Leipzig</td>
+<td>2023-08-14</td>
+<td>82.7</td>
+<td></td>
+</tr>
+<tr>
+<td>9</td>
+<td>Jürgen Braun</td>
+<td>juergen.braun@example.com</td>
+<td>1975-09-08</td>
+<td>72000.00</td>
+<td>Finance</td>
+<td>true</td>
+<td><strong>(empty)</strong> <sup>#3</sup></td>
+<td>Nürnberg</td>
+<td>2023-09-05</td>
+<td>95.2</td>
+<td></td>
+</tr>
+<tr>
+<td>10</td>
+<td>Claudia Hoffmann</td>
+<td>claudia.hoffmann@example.com</td>
+<td>1991-01-25</td>
+<td><strong>54000,50</strong> <sup>#23</sup></td>
+<td>IT</td>
+<td><strong>TRUE</strong> <sup>#27</sup></td>
+<td>+49 179 8883210</td>
+<td>Dresden</td>
+<td>2023-10-19</td>
+<td>78.9</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>11</strong> <sup>#16</sup></td>
+<td><strong>Marco Richter</strong></td>
+<td><strong>marco.richter@example.com</strong></td>
+<td><strong>1987-06-14</strong></td>
+<td><strong>58000.00</strong></td>
+<td><strong>Sales</strong></td>
+<td><strong>true</strong></td>
+<td><strong>+49 170 7772109</strong></td>
+<td><strong>Hannover</strong></td>
+<td><strong>2023-11-02</strong></td>
+<td><strong>84.6</strong></td>
+<td>⚠️ Duplicate row (1 of 2)</td>
+</tr>
+<tr>
+<td><strong>11</strong> <sup>#16</sup></td>
+<td><strong>Marco Richter</strong></td>
+<td><strong>marco.richter@example.com</strong></td>
+<td><strong>1987-06-14</strong></td>
+<td><strong>58000.00</strong></td>
+<td><strong>Sales</strong></td>
+<td><strong>true</strong></td>
+<td><strong>+49 170 7772109</strong></td>
+<td><strong>Hannover</strong></td>
+<td><strong>2023-11-02</strong></td>
+<td><strong>84.6</strong></td>
+<td>⚠️ Duplicate row (2 of 2)</td>
+</tr>
+<tr>
+<td>12</td>
+<td>Nina Wolf</td>
+<td>nina.wolf@example.com</td>
+<td>1993-03-22</td>
+<td>46000.00</td>
+<td>HR</td>
+<td><strong>0</strong> <sup>#28</sup></td>
+<td>+49 171 6660998</td>
+<td>Bremen</td>
+<td>2023-12-11</td>
+<td><strong>-5.0</strong> <sup>#31</sup></td>
+<td></td>
+</tr>
+<tr>
+<td>13</td>
+<td>Oliver Schäfer</td>
+<td>oliver.schaefer@example.com</td>
+<td>1980-10-31</td>
+<td><strong>999999.99</strong> <sup>#20</sup></td>
+<td>IT</td>
+<td>true</td>
+<td>+49 172 5550887</td>
+<td>Essen</td>
+<td>2024-01-08</td>
+<td><strong>101.3</strong> <sup>#30</sup></td>
+<td></td>
+</tr>
+<tr>
+<td>14</td>
+<td>Emma Wagner</td>
+<td>emma.wagner@example.com</td>
+<td>1996-12-03</td>
+<td>52000.00</td>
+<td>Finance</td>
+<td>true</td>
+<td>+49 173 4440776</td>
+<td>Dortmund</td>
+<td>2024-02-14</td>
+<td>70.8</td>
+<td>⚠️ id=14 used again below <sup>#38</sup></td>
+</tr>
+<tr>
+<td>15</td>
+<td>Felix Zimmermann</td>
+<td>felix.zimmermann@example.com</td>
+<td><strong>01/07/1989</strong> <sup>#7</sup></td>
+<td>53000.00</td>
+<td>Marketing</td>
+<td>true</td>
+<td><strong>0174-333-0665</strong> <sup>#37</sup></td>
+<td>Bonn</td>
+<td>2024-03-20</td>
+<td>89.1</td>
+<td></td>
+</tr>
+<tr>
+<td>16</td>
+<td>Sophie Krüger</td>
+<td>sophie.krueger@example.com</td>
+<td>1994-09-18</td>
+<td><strong>47000 EUR</strong> <sup>#22</sup></td>
+<td>Sales</td>
+<td>true</td>
+<td>+49 175 2220554</td>
+<td>Mannheim</td>
+<td>2024-04-05</td>
+<td>77.4</td>
+<td></td>
+</tr>
+<tr>
+<td>17</td>
+<td>David Hartmann</td>
+<td>david.hartmann@example.com</td>
+<td>1982-02-28</td>
+<td>61000.00</td>
+<td>IT</td>
+<td>true</td>
+<td>+49 176 1110443</td>
+<td>Karlsruhe</td>
+<td>2024-05-18</td>
+<td><strong>N/A</strong> <sup>#32</sup></td>
+<td></td>
+</tr>
+<tr>
+<td>18</td>
+<td>Lena Schmitt</td>
+<td>lena.schmitt@example.com</td>
+<td>1997-04-09</td>
+<td>49000.00</td>
+<td>HR</td>
+<td><strong>maybe</strong> <sup>#29</sup></td>
+<td>+49 177 0000332</td>
+<td>Augsburg</td>
+<td>2024-06-25</td>
+<td>86.0</td>
+<td></td>
+</tr>
+<tr>
+<td>19</td>
+<td>Jan Krause</td>
+<td>jan.krause@example.com</td>
+<td>1970-08-21</td>
+<td>68000.00</td>
+<td>Finance</td>
+<td>true</td>
+<td>+49 178 9990221</td>
+<td>Wiesbaden</td>
+<td><strong>24-07-30</strong> <sup>#9</sup></td>
+<td>93.7</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>14</strong> <sup>#38</sup></td>
+<td>Katrin Engel</td>
+<td>katrin.engel@example.com</td>
+<td>1986-11-15</td>
+<td>56000.00</td>
+<td>Marketing</td>
+<td>true</td>
+<td>+49 179 8880110</td>
+<td>Aachen</td>
+<td>2024-08-12</td>
+<td>80.2</td>
+<td>⚠️ Duplicate primary key (id=14)</td>
+</tr>
+<tr>
+<td>21</td>
+<td>Paul Neumann</td>
+<td>paul.neumann@example.com</td>
+<td>1973-05-27</td>
+<td><strong>  65000.00</strong> <sup>#25</sup></td>
+<td>Sales</td>
+<td>true</td>
+<td>+49 170 7779009</td>
+<td>Freiburg</td>
+<td>2024-09-01</td>
+<td><strong>NaN</strong> <sup>#33</sup></td>
+<td></td>
+</tr>
+<tr>
+<td>22</td>
+<td>Marie Schwarz</td>
+<td>marie.schwarz@example.com</td>
+<td>1999-01-01</td>
+<td>43000.00</td>
+<td>IT</td>
+<td>true</td>
+<td>+49 171 6668908</td>
+<td>Lübeck</td>
+<td>2024-10-14</td>
+<td>67.4</td>
+<td>⚠️ Extra field at end <sup>#14</sup></td>
+</tr>
+<tr>
+<td>23</td>
+<td>Robert Frank</td>
+<td>robert.frank@example.com</td>
+<td>1984-07-13</td>
+<td>57000.00</td>
+<td>HR</td>
+<td>true</td>
+<td>+49 172 5557807</td>
+<td>Mainz</td>
+<td>2024-11-22</td>
+<td><strong>(missing)</strong> <sup>#15</sup></td>
+<td>⚠️ Row has only 10 fields</td>
+</tr>
+<tr>
+<td>24</td>
+<td>Sabine Lang</td>
+<td>sabine.lang@example.com</td>
+<td><strong>NULL</strong> <sup>#5</sup></td>
+<td>50000.00</td>
+<td>Finance</td>
+<td>true</td>
+<td>+49 173 4446706</td>
+<td>Kiel</td>
+<td>2024-12-30</td>
+<td>90.1</td>
+<td></td>
+</tr>
+<tr>
+<td>25</td>
+<td><strong>&ldquo;Schulze; Tim&rdquo;</strong> <sup>#39</sup></td>
+<td><strong>tim schulze@@example.com</strong> <sup>#18</sup></td>
+<td>1991-10-06</td>
+<td>55000.00</td>
+<td>IT</td>
+<td>true</td>
+<td>+49 174 3335605</td>
+<td>Rostock</td>
+<td>2025-01-17</td>
+<td>83.9</td>
+<td>⚠️ Quoted <code>;</code> in name — parsed correctly but unusual</td>
+</tr>
+<tr>
+<td>26</td>
+<td>Andrea Berger</td>
+<td>andrea.berger@example.com</td>
+<td>1977-03-18</td>
+<td>63000.00</td>
+<td><strong>Marketing Department</strong> <sup>#35</sup></td>
+<td>true</td>
+<td>+49 175 2224504</td>
+<td>Potsdam</td>
+<td>2025-02-28</td>
+<td>75.6</td>
+<td></td>
+</tr>
+<tr>
+<td>27</td>
+<td>Florian Kern</td>
+<td>florian.kern@example.com</td>
+<td>1988-08-24</td>
+<td><strong>0.00</strong> <sup>#21</sup></td>
+<td>Sales</td>
+<td>true</td>
+<td><strong>12345</strong> <sup>#36</sup></td>
+<td>Trier</td>
+<td>2025-03-15</td>
+<td>88.8</td>
+<td></td>
+</tr>
+<tr>
+<td>28</td>
+<td>Monika Huber</td>
+<td>monika.huber@example.com</td>
+<td>1965-12-09</td>
+<td>71000.00</td>
+<td>HR</td>
+<td>true</td>
+<td>+49 177 0002302</td>
+<td>Regensburg</td>
+<td>2025-04-22</td>
+<td><strong>PASS</strong> <sup>#34</sup></td>
+<td></td>
+</tr>
+<tr>
+<td>29</td>
+<td>Stefan Vogel</td>
+<td>stefan.vogel@example.com</td>
+<td>1995-06-30</td>
+<td><strong>48,500.00</strong> <sup>#24</sup></td>
+<td>IT</td>
+<td>true</td>
+<td>+49 178 9991201</td>
+<td>Chemnitz</td>
+<td>2025-05-09</td>
+<td>72.1</td>
+<td></td>
+</tr>
+<tr>
+<td>30</td>
+<td>Heike Bauer</td>
+<td>heike.bauer@example.com</td>
+<td><strong>2099-04-15</strong> <sup>#12</sup></td>
+<td>52000.00</td>
+<td>Finance</td>
+<td>true</td>
+<td>+49 179 8880100</td>
+<td>Ulm</td>
+<td>2025-06-03</td>
+<td>81.5</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><strong>Legend:</strong> <strong>Bold</strong> = error cell · <sup>#N</sup> = error number from <code>data_errors_overview.md</code> · ⚠️ = structural issue affecting entire row</p>
+</body>
+</html>
